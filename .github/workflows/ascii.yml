@@ -1,40 +1,70 @@
-name: ASCII Program
+name: Run ASCII Script
 
-on: 
-  push
+
+on:
+  push:
+    branches: [ main ]
+
 
 jobs:
-  first-job: # Corrected spelling from 'fisrt-job'
-    runs-on: ubuntu-latest # FIXED: Changed 'runon' to 'runs-on'
+  ascii_job:
+    runs-on: ubuntu-latest
     steps:
-      - name: checkout-repo
-        uses: actions/checkout@v5
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: list repo File
+
+      - name: List Files Before Run
         run: ls -ltra
 
-      - name: Executing Shell Script 
+
+      - name: Make Script Executable and Run
         run: |
           chmod +x ascii-script.sh
+          ls -altr
           ./ascii-script.sh
 
-      # - name: list and read files
-      #   run: |
-      #     echo "My first GitHub Action Job"
-      #     ls -la
-      #     cat README.md
 
-      # - name: install cowsay Program
-      #   run: sudo apt-get install cowsay -y
 
-      # - name: Generate ASCII Artwork
-      #   run: cowsay -f dragon "run for cover, I am a DRAGON.....RAWA" >> dragon.txt
 
-      # - name: Test existing Files
-      #   run: grep -i "dragon" dragon.txt
 
-      # - name: Read File
-      #   run: cat dragon.txt
+# name: ASCII Program
 
-      # - name: list repo File
-      #   run: ls -ltra
+# on: 
+#   push
+
+# jobs:
+#   first-job: # Corrected spelling from 'fisrt-job'
+#     runs-on: ubuntu-latest # FIXED: Changed 'runon' to 'runs-on'
+#     steps:
+#       - name: checkout-repo
+#         uses: actions/checkout@v5
+
+#       - name: list repo File
+#         run: ls -ltra
+
+#       - name: Executing Shell Script 
+#         run: |
+#           chmod +x ascii-script.sh
+#           ./ascii-script.sh
+
+#       # - name: list and read files
+#       #   run: |
+#       #     echo "My first GitHub Action Job"
+#       #     ls -la
+#       #     cat README.md
+
+#       # - name: install cowsay Program
+#       #   run: sudo apt-get install cowsay -y
+
+#       # - name: Generate ASCII Artwork
+#       #   run: cowsay -f dragon "run for cover, I am a DRAGON.....RAWA" >> dragon.txt
+
+#       # - name: Test existing Files
+#       #   run: grep -i "dragon" dragon.txt
+
+#       # - name: Read File
+#       #   run: cat dragon.txt
+
+#       # - name: list repo File
+#       #   run: ls -ltra
