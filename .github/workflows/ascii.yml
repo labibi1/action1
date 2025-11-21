@@ -1,4 +1,4 @@
-name: My First Workflow # Changed 'name' capitalization
+name: ASCII Program
 
 on: 
   push
