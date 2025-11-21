@@ -1,16 +1,21 @@
-name: my first workflow
+name: My First Workflow # Changed 'name' capitalization
 
-on: push
+on: 
+  push
 
 jobs:
-    fisrt-job:
-        run-on: ubuntu-latest
-        steps:
-        - name: welcome message
-          run: echo "my first github action Job"
+  first-job: # Corrected spelling from 'fisrt-job'
+    runs-on: ubuntu-latest # FIXED: Changed 'runon' to 'runs-on'
+    steps:
+      - name: Checkout Repository
+        # Important: Add the checkout action to access files like README.md
+        uses: actions/checkout@v4 
+        
+      - name: Welcome Message
+        run: echo "My first GitHub Action Job"
 
-        - name: list files
-          run: ls
+      - name: List Files
+        run: ls -la # Use -la for detailed list
 
-        - name: read file
-          run: cat README.MD
+      - name: Read README File
+        run: cat README.md # FIXED: Changed capitalization to standard 'README.md'
