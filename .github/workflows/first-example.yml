@@ -7,6 +7,9 @@ jobs:
   first-job: # Corrected spelling from 'fisrt-job'
     runs-on: ubuntu-latest # FIXED: Changed 'runon' to 'runs-on'
     steps:
+      - name: checkout-repo
+        uses: actions/checkout@v5
+        
       - name: Checkout Repository
         # Important: Add the checkout action to access files like README.md
         uses: actions/checkout@v4 
