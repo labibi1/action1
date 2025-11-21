@@ -9,16 +9,18 @@ jobs:
     steps:
       - name: checkout-repo
         uses: actions/checkout@v5
-        
-      - name: Checkout Repository
-        # Important: Add the checkout action to access files like README.md
-        uses: actions/checkout@v4 
-        
-      - name: Welcome Message
-        run: echo "My first GitHub Action Job"
 
-      - name: List Files
-        run: ls -la # Use -la for detailed list
+      - name: list and read files
+        run: |
+          echo "My first GitHub Action Job"
+          ls -la
+          cat README.md
 
-      - name: Read README File
-        run: cat README.md # FIXED: Changed capitalization to standard 'README.md'
+      - name: Generate ASCII Artwork
+        run: cowsay -f dragon "run for cover, I am a DRAGON.....RAWA" >> dragon.txt
+
+      # - name: List Files
+      #   run: ls -la # Use -la for detailed list
+
+      # - name: Read README File
+      #   run: cat README.md # FIXED: Changed capitalization to standard 'README.md'
